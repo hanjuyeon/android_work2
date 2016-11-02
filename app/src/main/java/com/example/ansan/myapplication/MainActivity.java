@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -65,9 +66,19 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case R.id.button4: // 파일 읽기
+                try{
+                    FileInputStream fis = new FileInputStream(filename);
+                    byte arr[] = new byte[fis.available()];
+                    fis.read(arr);
+                    fis.close();
+                    Toast.makeText(getApplicationContext(), new String(arr),Toast.LENGTH_SHORT).show();
 
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
-                Toast.makeText(getApplicationContext(), "파일 읽기",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button5:  //파일 목록 가져오기
 
