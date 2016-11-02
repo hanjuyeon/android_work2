@@ -45,12 +45,6 @@
             android:text="파일 생성"
             android:id="@+id/button2" />
 
-        <Button
-            android:onClick="onClick"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="파일 읽기"
-            android:id="@+id/button3" />
     </LinearLayout>
 
     <LinearLayout
@@ -63,15 +57,22 @@
             android:onClick="onClick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="파일 읽기"
+            android:id="@+id/button3" />
+
+        <Button
+            android:onClick="onClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="파일 목록 가져오기"
             android:id="@+id/button5" />
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.82"
-        android:background="#81b7f0"></LinearLayout>
+        android:id="@+id/editText"
+        android:layout_weight="0.80"
+        android:background="#e89e9e" />
 
 </LinearLayout>
