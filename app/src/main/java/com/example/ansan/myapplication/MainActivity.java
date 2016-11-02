@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,10 +48,24 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "폴더 삭제",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button3: // 파일 생성
+                try {
+                    FileOutputStream fos = new FileOutputStream(filename);
+                    String str = "Hello";
 
-                Toast.makeText(getApplicationContext(), "파일 생성",Toast.LENGTH_SHORT).show();
+                    fos.write(str.getBytes());
+                    fos.close();
+                    Toast.makeText(getApplicationContext(), "파일 생성",Toast.LENGTH_SHORT).show();
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
                 break;
             case R.id.button4: // 파일 읽기
+
 
                 Toast.makeText(getApplicationContext(), "파일 읽기",Toast.LENGTH_SHORT).show();
                 break;
